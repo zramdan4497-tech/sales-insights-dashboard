@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sales Insights Dashboard</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<header>
+  <h1>Sales Insights Dashboard</h1>
+  <div class="filters">
+    <label>From <input type="date" id="from"></label>
+    <label>To <input type="date" id="to"></label>
+    <label>City <select id="city"><option value="">All cities</option></select></label>
+    <button id="apply">Apply</button>
+  </div>
+</header>
+
+<main>
+  <section class="kpis">
+    <div class="card"><span class="label">Revenue</span><span class="value" id="kpi-revenue">-</span></div>
+    <div class="card"><span class="label">Orders</span><span class="value" id="kpi-orders">-</span></div>
+    <div class="card"><span class="label">Avg order value</span><span class="value" id="kpi-aov">-</span></div>
+  </section>
+
+  <section class="grid">
+    <div class="panel wide"><h2>Monthly revenue</h2><canvas id="chart-monthly"></canvas></div>
+    <div class="panel"><h2>Revenue by category</h2><canvas id="chart-category"></canvas></div>
+    <div class="panel">
+      <h2>Top 10 customers</h2>
+      <table id="top-customers">
+        <thead><tr><th>Customer</th><th>City</th><th>Orders</th><th>Revenue</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
